@@ -18,6 +18,7 @@ jobs:
         run: pip install poetry
       - name: Install dependencies
         run: poetry install
-      - name: Run tests |
-        poetry run pip install coverage pytest
-        poetry run coverage run --branch -m pytest
+      - name: Run tests 
+        run: |
+          poetry run pip install coverage pytest
+          poetry run coverage run --branch -m pytest
