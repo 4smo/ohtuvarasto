@@ -28,4 +28,5 @@ def configure_app(app, config):
 
 if __name__ == '__main__':
     application = create_app()
-    application.run(debug=True)
+    debug_mode = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
+    application.run(debug=debug_mode)
