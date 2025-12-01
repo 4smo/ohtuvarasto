@@ -15,7 +15,7 @@ def register_warehouse_routes(app):  # pylint: disable=too-many-statements
     @app.route('/')
     def index():
         """Display list of all warehouses."""
-        warehouses = Warehouse.query.all()
+        warehouses = Warehouse.query.order_by(Warehouse.name).all()
         return render_template('index.html', warehouses=warehouses)
 
     @app.route('/warehouse/create', methods=['POST'])
